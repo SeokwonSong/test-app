@@ -5,7 +5,7 @@
   "description": "Example project from an angular.io guide.",
   "scripts": {
     "ng": "ng",
-    "build": "ng build",
+    "build": "ng build && node server.js",
     "start": "ng serve",
     "test": "ng test",
     "lint": "tslint ./src/**/*.ts -t verbose",
@@ -29,7 +29,14 @@
     "@angular/router": "~5.0.0",
     "@angular/upgrade": "~5.0.0",
     "angular-in-memory-web-api": "~0.5.0",
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
+    "express": "4.16.2",
+    "morgan": "^1.9.0",
+    "mysql": "2.15.0",
+    "ngx-bootstrap": "^2.0.2",
     "rxjs": "^5.5.0",
     "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.4"
