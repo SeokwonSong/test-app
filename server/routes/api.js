@@ -42,6 +42,8 @@ router.post('/mail', (req, res) => {
   console.log("test");
   res.send('mail');
 
+  console.log(req);
+
   nodemailer.createTestAccount((err, account) => {
     if (err) {
       console.error('Failed to create a testing account');
