@@ -37,6 +37,7 @@ app.use('/api', api);
 
 // 기타 모든 라우트는 index.html로 돌림
 // 위에서 필요한 라우트를 모두 설정하고 마지막에 이 코드가 와야함.
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });

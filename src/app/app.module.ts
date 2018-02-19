@@ -16,6 +16,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts.service';
 import { HttpModule } from '@angular/http';
 import { TestComponent } from './test/test.component';
+import { TestService } from './test.service';
 
 @NgModule({
   imports: [
@@ -34,7 +35,7 @@ import { TestComponent } from './test/test.component';
     PostsComponent,
     TestComponent
   ],
-  providers: [HeroService, MessageService, PostsService ],
+  providers: [HeroService, MessageService, PostsService, TestService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

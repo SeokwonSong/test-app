@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-test',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
-  constructor() { }
+  constructor(private testService: TestService) { }
 
   ngOnInit() {
   }
 
+  sendMail() {
+    this.testService.sendMail();
+  }
 }
