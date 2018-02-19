@@ -1,32 +1,501 @@
-<h3>Top Heroes</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let hero of heroes" class="col-1-4"
-     routerLink="/detail/{{hero.id}}">
-    <div class="module hero">
-      <h4>{{hero.name}}</h4>
-    </div>
-  </a>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-12 col-md-4 form-group">
-    <input type="text"
-           class="form-control"
-           [minDate]="minDate"
-           [maxDate]="maxDate"
-           #dp="bsDatepicker"
-           bsDatepicker [(bsValue)]="bsValue"   [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }">
-  </div>
-  <div class="col-xs-12 col-12 col-md-3 form-group">
-    <button class="btn btn-success" (click)="dp.toggle()">Date Picker</button>
-  </div>
-</div>
-<br>
 
-<div class="row">
-  <div class="col-xs-12 col-12 col-md-4 form-group">
-    <input class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="bsRangeValue">
-  </div>
-  <div class="col-xs-12 col-12 col-md-3 form-group">
-    <button class="btn btn-success" (click)="drp.toggle()">Date Range Picker</button>
-  </div>
+<div class="content_wrap">
+
+  <!-- 페이지 타이틀바 -->
+  <section class="pageTitleBar">
+    <div class="wrap">
+      <a class="btn_back">뒤로가기</a>
+
+      <p class="title">이력 조회</p>
+    </div>
+  </section>
+  <!--// 페이지 타이틀바 -->
+
+  <section class="history">
+    <div class="tab_area1">
+      <ul class="tab_type1 clear">
+        <li class="width2"><a href="#"><span>주행중 큰충격<span class="new" id="new_accident" style="display:none"></span></span></a></li>
+        <li class="width2"><a href="#"><span>주행중 큰충격<span class="new" id="new_accident" style="display:none"></span></span></a></li>
+        <li class="width2"><a href="#"><span>주행중 큰충격<span class="new" id="new_accident" style="display:none"></span></span></a></li>
+        <li class="width2"><a href="#"><span>주행중 큰충격<span class="new" id="new_accident" style="display:none"></span></span></a></li>
+
+      </ul>
+
+      <!-- '운행' 메뉴에만 노출되는 텍스트 -->
+      <p class="tab_desc">* 항목 터치 시 해당 위치로 이동합니다.</p>
+    </div>
+
+    <!-- 과속 -->
+    <table class="tbl_type1">
+      <colgroup>
+        <col style="width:23%" />
+        <col style="width:19%" />
+        <col style="width:58%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th style="text-align:center">날짜</th>
+          <th style="text-align:center">시간</th>
+          <th style="text-align:center">장소</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+        <tr>
+          <td>2017.01.01</td>
+          <td>12124~<br />12312312</td>
+          <td class="addr"><span>100km, </span>주소</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </section>
+
 </div>
+
+

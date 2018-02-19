@@ -15,6 +15,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts.service';
 import { HttpModule } from '@angular/http';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { HttpModule } from '@angular/http';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    PostsComponent
+    PostsComponent,
+    TestComponent
   ],
   providers: [HeroService, MessageService, PostsService ],
   bootstrap: [ AppComponent ]
