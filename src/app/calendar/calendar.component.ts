@@ -2,7 +2,14 @@ import {  Component, OnInit, ChangeDetectionStrategy,  ViewChild,  TemplateRef }
 
 import { startOfDay,  endOfDay,  subDays,  addDays,  endOfMonth,  isSameDay,  isSameMonth,  addHours} from 'date-fns';
 import { Subject } from 'rxjs/Subject';
-import {  CalendarEvent,  CalendarEventAction,  CalendarEventTimesChangedEvent} from 'angular-calendar';
+import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDateFormatter  } from 'angular-calendar';
+import { registerLocaleData } from '@angular/common';
+import { CustomDateFormatter } from './custom-date-formatter.provider';
+
+import localeKo from '@angular/common/locales/ko';
+
+
+registerLocaleData(localeKo);
 
 const colors: any = {
   red: {
@@ -22,7 +29,13 @@ const colors: any = {
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  styleUrls: ['./calendar.component.css'],
+  providers: [
+    {
+      provide: CalendarDateFormatter,
+      useClass: CustomDateFormatter
+    }
+  ]
 })
 export class CalendarComponent implements OnInit {
 
