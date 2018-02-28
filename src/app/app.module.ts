@@ -20,6 +20,8 @@ import { TestService } from './test.service';
 import { CalendarComponent } from './calendar/calendar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
+import { UploadComponent } from './upload/upload.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   imports: [
@@ -29,7 +31,8 @@ import { CalendarModule } from 'angular-calendar';
     BsDatepickerModule.forRoot(),
     HttpModule,
     BrowserAnimationsModule,
-    CalendarModule.forRoot()
+    CalendarModule.forRoot(),
+    FileUploadModule
   ],
   declarations: [
     AppComponent,
@@ -39,7 +42,8 @@ import { CalendarModule } from 'angular-calendar';
     MessagesComponent,
     PostsComponent,
     TestComponent,
-    CalendarComponent
+    CalendarComponent,
+    UploadComponent
   ],
   providers: [HeroService, MessageService, PostsService, TestService],
   bootstrap: [AppComponent]

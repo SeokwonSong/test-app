@@ -7,6 +7,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { PostsComponent } from './posts/posts.component';
 import { TestComponent } from './test/test.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { UploadComponent } from './upload/upload.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'test', component: TestComponent },
-  { path: 'calender', component: CalendarComponent }
+  { path: 'calender', component: CalendarComponent },
+  { path: 'upload', component: UploadComponent }
 
 
 ];

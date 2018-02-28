@@ -5,6 +5,58 @@ var dbconfig = require('../../dbconfig.js');
 var connection = mysql.createConnection(dbconfig);
 var nodemailer = require('nodemailer');
 
+var multer = require('multer');
+var fs = require('fs');
+var app = express();
+
+var path = './uploads/';
+
+var storage = multer.diskStorage({
+  destination: path,
+  filename: function (req, file, callback) {
+    console.log(file);
+
+    fs.realpath(path, function (err, stats) {
+      if (err) throw err;
+      console.log(stats);
+
+      var exists = fs.existsSync(stats);
+      console.log('file exists ? ' + exists);
+
+      //fs.exists(stats + "/" + file.originalname, function (exists) {
+      //  console.log("file exists ? " + exists);
+      //});
+      console.log(stats + "/" + file.originalname);
+    });
+
+    callback(null, file.originalname);
+  }
+});
+
+var upload = multer({ storage: storage }).any();
+
+
+//app.use(function (req, res, next) {
+//  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+//  res.setHeader('Access-Control-Allow-Methods', 'POST');
+//  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+//  res.setHeader('Access-Control-Allow-Credentials', true);
+//  next();
+//});
+
+//app.use(multer({
+//  dest: path,
+//  rename: function (fieldname, filename) {
+//    return filename + Date.now();
+//  },
+//  onFileUploadStart: function (file) {
+//    console.log(file.originalname + ' is starting ...');
+//  },
+//  onFileUploadComplete: function (file) {
+//    console.log(file.fieldname + ' uploaded to  ' + file.path);
+//  }
+//}).any());
+
 // declare axios for making http requests
 const axios = require('axios');
 const API = 'https://jsonplaceholder.typicode.com';
@@ -35,7 +87,30 @@ router.get('/posts', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+  console.log(req);
+  console.log(res);
   res.send('post api works');
+});
+
+router.get('/upload', function (req, res) {
+  console.log(req);
+  console.log(res);
+  res.end('file catcher example');
+});
+
+router.post('/upload', function (req, res) {
+  upload(req, res, function (err) {
+    
+    console.log(err, 'Im in post , inside upload' + path);
+    if (err) {
+      return res.end('Error uploading file.');
+
+    }
+    console.log("asdfasdf: " + req.file)
+    res.end('File is uploaded' + path);
+    console.log('File is uploaded' + path);
+
+  });
 });
 
 router.post('/mail', (req, res) => {
