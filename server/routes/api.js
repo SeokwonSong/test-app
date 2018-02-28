@@ -20,16 +20,20 @@ var storage = multer.diskStorage({
       if (err) throw err;
       console.log(stats);
 
-      var exists = fs.existsSync(stats);
-      console.log('file exists ? ' + exists);
-
-      //fs.exists(stats + "/" + file.originalname, function (exists) {
-      //  console.log("file exists ? " + exists);
-      //});
       console.log(stats + "/" + file.originalname);
+
+      //var exists = fs.existsSync(stats);
+      //console.log('file exists ? ' + exists);
+
+      if (fs.existsSync(stats)) {
+        callback(null, Date.now() + "_" + file.originalname);
+      } else {
+        callback(null, file.originalname);
+      }
+      
     });
 
-    callback(null, file.originalname);
+    
   }
 });
 
@@ -105,8 +109,7 @@ router.post('/upload', function (req, res) {
     if (err) {
       return res.end('Error uploading file.');
 
-    }
-    console.log("asdfasdf: " + req.file)
+    }    
     res.end('File is uploaded' + path);
     console.log('File is uploaded' + path);
 
