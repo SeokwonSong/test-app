@@ -22,6 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
 import { UploadComponent } from './upload/upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { PaginationModule } from 'ngx-bootstrap';
+
 
 @NgModule({
   imports: [
@@ -32,7 +34,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     HttpModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot(),
-    FileUploadModule
+    FileUploadModule,
+    PaginationModule.forRoot()
   ],
   declarations: [
     AppComponent,

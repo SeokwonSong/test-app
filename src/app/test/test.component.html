@@ -2,3 +2,8 @@
   test works!
   <button class="btn btn-danger" (click)="sendMail();">테스트</button>
 </p>
+<a (click)="download();$event.preventDefault();" download='test.gif'>
+  <div id="gif_test">
+  </div>
+</a>
+
